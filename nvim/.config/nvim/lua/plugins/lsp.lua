@@ -1,5 +1,4 @@
 return {
-  -- Tên mới của Mason
   {
     "mason-org/mason.nvim",
     opts = {
