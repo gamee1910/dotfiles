@@ -46,24 +46,6 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Close buffer" })
 
 -- ══════════════════════════════════════
--- C++ Competitive Programming
--- ══════════════════════════════════════
-map("n", "<leader>rr", function()
-  local file = vim.fn.expand("%:p")
-  local out  = vim.fn.expand("%:p:r")
-  local cmd  = string.format("g++ -std=c++17 -O2 -o %s %s && %s", out, file, out)
-  vim.cmd("split | terminal " .. cmd)
-end, { desc = "Compile & Run C++" })
-
-map("n", "<leader>ri", function()
-  local file = vim.fn.expand("%:p")
-  local out  = vim.fn.expand("%:p:r")
-  local dir  = vim.fn.expand("%:p:h")
-  local cmd  = string.format("g++ -std=c++17 -O2 -o %s %s && %s < %s/input.txt", out, file, out, dir)
-  vim.cmd("split | terminal " .. cmd)
-end, { desc = "Compile & Run C++ with input.txt" })
-
--- ══════════════════════════════════════
 -- Terminal
 -- ══════════════════════════════════════
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

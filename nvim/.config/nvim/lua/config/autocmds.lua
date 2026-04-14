@@ -1,6 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- Highlight khi yank
 autocmd("TextYankPost", {
   desc = "Highlight on yank",
   callback = function()
@@ -8,7 +7,6 @@ autocmd("TextYankPost", {
   end,
 })
 
--- Tự động format khi save (dùng LSP)
 autocmd("BufWritePre", {
   desc = "Auto format on save",
   callback = function()
@@ -16,7 +14,6 @@ autocmd("BufWritePre", {
   end,
 })
 
--- Tắt auto comment khi xuống dòng mới
 autocmd("BufEnter", {
   desc = "Disable auto comment on new line",
   callback = function()
@@ -24,7 +21,6 @@ autocmd("BufEnter", {
   end,
 })
 
--- Nhớ vị trí cursor khi mở lại file
 autocmd("BufReadPost", {
   desc = "Restore cursor position",
   callback = function()
@@ -36,23 +32,9 @@ autocmd("BufReadPost", {
   end,
 })
 
--- Tự động resize windows khi terminal thay đổi kích thước
 autocmd("VimResized", {
   desc = "Resize windows on terminal resize",
   callback = function()
     vim.cmd("tabdo wincmd =")
-  end,
-})
-
--- C++: tự động tạo input.txt nếu chưa có
-autocmd("BufNewFile", {
-  pattern = "*.cpp",
-  desc = "Create input.txt for C++",
-  callback = function()
-    local dir = vim.fn.expand("%:p:h")
-    local input = dir .. "/input.txt"
-    if vim.fn.filereadable(input) == 0 then
-      vim.fn.writefile({}, input)
-    end
   end,
 })
