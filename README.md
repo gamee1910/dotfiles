@@ -21,10 +21,8 @@ The layout mirrors `$HOME` so files can be linked into place:
    - `git clone https://github.com/gamee1910/dotfiles.git`
 2. Create parent directories if needed:
    - `mkdir -p ~/.config ~/.config/kitty ~/.config/nvim`
-3. Link files from this repository into `$HOME`:
-   - `ln -sf "$PWD/zsh/.zshrc" ~/.zshrc`
-   - `ln -sfn "$PWD/kitty/.config/kitty" ~/.config/kitty`
-   - `ln -sfn "$PWD/nvim/.config/nvim" ~/.config/nvim`
+3. Link files with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html):
+   - usage: `stow nvim && stow zsh && stow kitty`
 4. Start Neovim once to install plugins:
    - `nvim`
 
