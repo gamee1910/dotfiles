@@ -15,7 +15,6 @@ return {
 
       local Terminal = require("toggleterm.terminal").Terminal
 
-      -- Maven utils (chạy trong thư mục hiện tại)
       local maven_test = Terminal:new({ cmd = "./mvnw test", direction = "horizontal", close_on_exit = false })
       local maven_clean =
         Terminal:new({ cmd = "./mvnw clean install", direction = "horizontal", close_on_exit = false })
@@ -27,7 +26,6 @@ return {
         maven_clean:toggle()
       end, { desc = "Maven Clean Install" })
 
-      -- Thoát terminal mode
       vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
     end,
   },

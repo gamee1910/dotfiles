@@ -4,29 +4,23 @@ local map = vim.keymap.set
 -- General
 -- ══════════════════════════════════════
 
--- Lưu file
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "Save file" })
 
--- Thoát
 map("n", "<C-q>", "<cmd>q<cr>", { desc = "Quit" })
 
--- Xóa mà không copy vào clipboard
 map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank" })
 
--- Paste mà không mất clipboard
 map("v", "p", [["_dP]], { desc = "Paste without losing clipboard" })
 
 -- ══════════════════════════════════════
 -- Navigation
 -- ══════════════════════════════════════
 
--- Di chuyển giữa windows bằng Ctrl+hjkl
 map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
--- Di chuyển dòng lên/xuống trong visual mode
 map("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move line down" })
 map("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move line up" })
 

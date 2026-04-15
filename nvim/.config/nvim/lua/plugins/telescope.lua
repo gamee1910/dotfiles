@@ -13,18 +13,16 @@ return {
           path_display = { "smart" },
           mappings = {
             i = {
-              ["<C-k>"] = actions.move_selection_previous, -- Di chuyển lên
-              ["<C-j>"] = actions.move_selection_next, -- Di chuyển xuống
+              ["<C-k>"] = actions.move_selection_previous,
+              ["<C-j>"] = actions.move_selection_next,
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             },
           },
         },
       })
 
-      -- Load extension fzf nếu đã build thành công
       telescope.load_extension("fzf")
 
-      -- Thiết lập phím tắt (Keymaps)
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Tìm file" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Tìm chữ trong file (grep)" })
