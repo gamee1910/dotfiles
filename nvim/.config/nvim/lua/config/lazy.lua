@@ -22,11 +22,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.java" },
     { import = "plugins" },
   },
-  defaults = {
-    lazy = false,
-    version = false,
-  },
-  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
     enabled = true,
     notify = false,
