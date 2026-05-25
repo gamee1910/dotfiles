@@ -1,6 +1,4 @@
 local colorScheme = {
-  { "xero/miasma.nvim", name = "miasma" },
-  { "olivercederborg/poimandres.nvim", name = "poimandres" },
   { "folke/tokyonight.nvim", name = "tokyonight" },
   { "catppuccin/nvim", name = "catppuccin" },
 }
@@ -21,8 +19,6 @@ end
 vim.keymap.set("n", "<leader>qp", cycleColorScheme, { desc = "Cycle colorscheme" })
 
 return {
-  { "xero/miasma.nvim" },
-  { "olivercederborg/poimandres.nvim" },
   { "folke/tokyonight.nvim" },
   { "catppuccin/nvim" },
 }
