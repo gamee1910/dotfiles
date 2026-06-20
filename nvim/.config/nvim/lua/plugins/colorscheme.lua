@@ -6,6 +6,7 @@ local colorSchemes = {
   { name = "everforest" },
   { name = "onedark" },
   { name = "gruvbox-material" },
+  { name = "vscode" },
 }
 
 local function cycleColorScheme()
@@ -36,10 +37,18 @@ return {
     priority = 1000,
     config = function()
       require("onedark").setup({ style = "darker" })
-      require("onedark").load()
     end,
   },
   {
     "sainnhe/gruvbox-material",
+  },
+  {
+
+    "Mofiqul/vscode.nvim",
+    config = function()
+      require("vscode").setup({
+        style = "dark",
+      })
+    end,
   },
 }
