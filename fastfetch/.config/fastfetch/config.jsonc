@@ -1,0 +1,122 @@
+{
+  "logo": "debian",
+  
+  "display": {
+    "separator": "  ",
+    "key": {
+        "width" : 12,
+        },
+    "brightColor": "blue"
+  },
+  
+  "modules": [
+    {
+      "type": "title"
+    },
+    {
+      "type": "separator",
+      "title": "System Info"
+    },
+    {
+      "type": "os"
+    },
+    {
+      "type": "kernel"
+    },
+    {
+      "type": "uptime"
+    },
+    {
+      "type": "cpu"
+    },
+    {
+      "type": "cpuUsage"
+    },
+    {
+      "type": "gpu"
+    },
+    {
+      "type": "memory"
+    },
+    {
+      "type": "swap"
+    },
+    {
+      "type": "separator",
+      "title": "Storage"
+    },
+    {
+      "type": "disk",
+      "key": "Disk (/)"
+    },
+    {
+      "type": "separator",
+      "title": "Development"
+    },
+    {
+      "type": "shell"
+    },
+    {
+      "type": "terminal"
+    },
+    {
+      "type": "editor"
+    },
+    {
+      "type": "package"
+    },
+    {
+      "type": "separator",
+      "title": "Languages & Tools"
+    },
+    {
+      "type": "custom",
+      "format": "Java: {#bold}{command:java -version 2>&1 | head -1}{#reset}"
+    },
+    {
+      "type": "custom",
+      "format": "Maven: {#bold}{command:mvn -v 2>/dev/null | head -1}{#reset}"
+    },
+    {
+      "type": "custom",
+      "format": "G++: {#bold}{command:g++ --version 2>/dev/null | head -1}{#reset}"
+    },
+    {
+      "type": "custom",
+      "format": "Node: {#bold}{command:node -v}{#reset}"
+    },
+    {
+      "type": "custom",
+      "format": "Git: {#bold}{command:git --version}{#reset}"
+    },
+    {
+      "type": "separator",
+      "title": "Network"
+    },
+    {
+      "type": "ipv4"
+    },
+    {
+      "type": "ipv6"
+    },
+    {
+      "type": "separator",
+      "title": "Other"
+    },
+    {
+      "type": "locale"
+    },
+    {
+      "type": "timezone"
+    },
+    {
+      "type": "font"
+    },
+    {
+      "type": "cursor"
+    },
+    {
+      "type": "colors"
+    }
+  ]
+}
