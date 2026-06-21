@@ -23,6 +23,13 @@ end
 vim.keymap.set("n", "<leader>qp", cycleColorScheme, { desc = "Cycle colorscheme" })
 
 return {
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000,
+    config = function()
+      require("onedark").setup({ style = "darker" })
+    end,
+  },
   { "folke/tokyonight.nvim" },
   {
     "catppuccin/nvim",
@@ -33,17 +40,9 @@ return {
   },
   { "neanias/everforest-nvim" },
   {
-    "navarasu/onedark.nvim",
-    priority = 1000,
-    config = function()
-      require("onedark").setup({ style = "darker" })
-    end,
-  },
-  {
     "sainnhe/gruvbox-material",
   },
   {
-
     "Mofiqul/vscode.nvim",
     config = function()
       require("vscode").setup({
