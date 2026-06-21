@@ -1,10 +1,10 @@
 local currentIndex = 1
 
 local colorSchemes = {
+  { name = "onedark" },
   { name = "tokyonight" },
   { name = "catppuccin-frappe" },
   { name = "everforest" },
-  { name = "onedark" },
   { name = "gruvbox-material" },
   { name = "vscode" },
 }
@@ -28,6 +28,7 @@ return {
     priority = 1000,
     config = function()
       require("onedark").setup({ style = "darker" })
+      vim.cmd("colorscheme onedark")
     end,
   },
   { "folke/tokyonight.nvim" },
