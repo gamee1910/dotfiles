@@ -7,6 +7,7 @@ return {
         "jdtls",
         "clang-format",
         "google-java-format",
+        "gopls",
       },
     },
   },
