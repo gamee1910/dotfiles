@@ -8,6 +8,7 @@ return {
         "clang-format",
         "google-java-format",
         "gopls",
+        "goimports",
       },
     },
   },
@@ -22,6 +23,18 @@ return {
             "--clang-tidy",
             "--header-insertion=iwyu",
             "--completion-style=detailed",
+          },
+        },
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+              staticcheck = true,
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+              },
+            },
           },
         },
       },
@@ -73,6 +86,7 @@ return {
         java = { "google-java-format" },
         cpp = { "clang-format" },
         c = { "clang-format" },
+        go = { "goimports", "gofmt" },
       },
       formatters = {
         injected = { options = { ignore_errors = true } },
