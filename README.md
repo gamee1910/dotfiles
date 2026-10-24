@@ -14,6 +14,8 @@ The layout mirrors `$HOME` so files can be linked into place:
   - `kitty.conf` main terminal settings (font, cursor, performance, clipboard)
   - `themes/mocha.conf` Catppuccin Mocha theme
 - `zsh/.zshrc` — Zsh environment setup and tool initialization
+- `fcitx5/.config/fcitx5/` — fcitx5 Vietnamese input (Unikey, Telex)
+- `plasma/.config/plasma-workspace/env/` — KDE login env (`GLFW_IM_MODULE=ibus` so kitty can use fcitx5)
 
 ## Usage notes
 
@@ -22,7 +24,7 @@ The layout mirrors `$HOME` so files can be linked into place:
 2. Create parent directories if needed:
    - `mkdir -p ~/.config ~/.config/kitty ~/.config/nvim`
 3. Link files with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html):
-   - usage: `stow nvim && stow zsh && stow kitty`
+   - usage: `stow nvim zsh kitty fcitx5 plasma`
 4. Start Neovim once to install plugins:
    - `nvim`
 

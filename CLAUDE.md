@@ -7,11 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Personal dotfiles managed with GNU Stow. Each top-level directory is a Stow package whose contents mirror `$HOME`
 (e.g. `kitty/.config/kitty/kitty.conf` → `~/.config/kitty/kitty.conf`). There is no build, lint, or test suite.
 
-Packages: `nvim`, `kitty`, `zsh`, `fastfetch`, `plasma`.
+Packages: `nvim`, `kitty`, `zsh`, `fastfetch`, `plasma`, `fcitx5`.
 
 ## Commands
 
-- Link a package into `$HOME` (run from repo root): `stow <package>` — e.g. `stow nvim kitty zsh fastfetch plasma`
+- Link a package into `$HOME` (run from repo root): `stow <package>` — e.g. `stow nvim kitty zsh fastfetch plasma fcitx5`
 - Preview without changing anything: `stow -nv <package>`
 - Unlink: `stow -D <package>`
 - Format Neovim Lua (uses `nvim/.config/nvim/stylua.toml`, 2-space indent, 120 cols): `stylua nvim/.config/nvim`
@@ -44,6 +44,10 @@ The theme lives in `current-theme.conf`, included from the `BEGIN_KITTY_THEME`/`
 Vietnamese input: kitty only speaks the ibus protocol, so fcitx5 is used via its ibus frontend. `GLFW_IM_MODULE=ibus`
 must be set before kitty starts, which `plasma/.config/plasma-workspace/env/kitty-ime.sh` does at KDE Plasma login
 (needs `stow plasma` and a re-login).
+
+The fcitx5 config itself (Unikey/Telex, hotkeys) is the `fcitx5` package. Stow links the whole
+`~/.config/fcitx5` directory, not each file, because fcitx5 saves by replacing files, which would break per-file
+symlinks. Its runtime files (`conf/cached_layouts`, `crash.log`) are gitignored. Unlink it with `stow -D fcitx5`.
 
 ## Zsh (`zsh/.zshrc`)
 
